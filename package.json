@@ -1,0 +1,31 @@
+{
+  "name": "petpuja",
+  "version": "1.0.0",
+  "description": "Food Ordering Web Application built with React and Parcel",
+  "keywords": [
+    "react",
+    "parcel",
+    "food-ordering"
+  ],
+  "homepage": "https://github.com/Harsh2594/PetPuja#readme",
+  "bugs": {
+    "url": "https://github.com/Harsh2594/PetPuja/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Harsh2594/PetPuja.git"
+  },
+  "license": "ISC",
+  "author": "Harsh Pratap Singh",
+  "type": "commonjs",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  }
+}
