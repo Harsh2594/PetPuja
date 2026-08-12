@@ -24,7 +24,11 @@ const Header = () => {
   return (
     <div className="header">
       <div className="logo-container">
-        <img className="logo" src={logo} alt="PetPuja" />
+        <img
+          className="logo"
+          src="https://png.pngtree.com/png-vector/20220705/ourmid/pngtree-food-logo-png-image_5687686.png"
+          alt="PetPuja"
+        />
       </div>
       <div className="nav-items">
         <ul>
