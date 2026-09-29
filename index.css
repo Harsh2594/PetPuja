@@ -26,8 +26,11 @@
 }
 
 .search-container {
-  display: flex;
-  padding: 20px;
+  cursor: pointer;
+  margin: 10px;
+  padding: 1px 6px;
+  font-size: 13.3333px;
+  height: 28px;
 }
 
 .res-card {
@@ -54,4 +57,35 @@
   justify-content: center;
   gap: 30px;
   padding: 20px;
+}
+
+.filter-button {
+  cursor: pointer;
+  margin: 10px;
+  padding: 1px 6px;
+  font-size: 13.3333px;
+  height: 22px;
+}
+.filter {
+  display: flex;
+}
+.shimmer-container {
+  display: flex;
+}
+
+.shimmer-card {
+  margin: 20px;
+  width: 200px;
+  height: 400px;
+  background: color #f0f0f0;
+}
+
+.login {
+  padding: 20px;
+  cursor: pointer;
+}
+
+.user-card {
+  padding: 10px;
+  border: 1px solid black;
 }
