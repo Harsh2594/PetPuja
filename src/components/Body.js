@@ -4,11 +4,13 @@ import Shimmer from "./Shimmer";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { withNonVegLabel } from "./RestaurantCard";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurant] = useState(resList);
   const [filteredRestaurant, setFilteredRestaurnt] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const RestaurantCardNonVeg = withNonVegLabel(RestaurantCard);
 
   useEffect(() => {
     fetchData();
@@ -42,17 +44,23 @@ const Body = () => {
 
   return (
     <div className="body">
-      <div className="filter">
-        <div className="search-container">
+      <div className="flex">
+        <div className="search m-4 p-4 flex items-center">
           <input
             type="text"
-            className="search-box"
+            className="border border-gray-200 rounded-xl shadow-md
+               px-4 py-2 outline-none
+               hover:border-gray-400
+               focus:border-gray-300
+               transition-colors duration-200"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
+            className="text-gray-500 px-4 py-1.5 bg-amber-500 m-4 hover:text-gray-900 focus:text-gray-900 
+             text-lg rounded-lg"
             onClick={() => {
               const filteredRestaurants = listOfRestaurants.filter((res) => {
                 const search = searchText.toLowerCase();
@@ -70,27 +78,34 @@ const Body = () => {
             Search
           </button>
         </div>
-        <button
-          className="filter-button"
-          onClick={() => {
-            console.log(listOfRestaurants);
-            const filteredList = listOfRestaurants.filter(
-              (res) => res.info.avgRating > 4,
-            );
-            setListOfRestaurant(filteredList);
-          }}
-        >
-          Top Rated Restaurant
-        </button>
+        <div className="search m-4 p-4 flex items-center">
+          <button
+            className="text-gray-500 px-4 py-1.5 bg-amber-500 m-4 hover:text-gray-900 focus:text-gray-900 
+             text-lg rounded-lg"
+            onClick={() => {
+              console.log(listOfRestaurants);
+              const filteredList = listOfRestaurants.filter(
+                (res) => res.info.avgRating > 4,
+              );
+              setListOfRestaurant(filteredList);
+            }}
+          >
+            Top Rated Restaurant
+          </button>
+        </div>
       </div>
 
-      <div className="restaurant-container">
+      <div className="flex flex-wrap m-14">
         {filteredRestaurant.map((restaurant) => (
           <Link
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant.info} />
+            {restaurant.info.veg ? (
+              <RestaurantCard resData={restaurant.info} />
+            ) : (
+              <RestaurantCardNonVeg resData={restaurant.info} />
+            )}
           </Link>
         ))}
       </div>
