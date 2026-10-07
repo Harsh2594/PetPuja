@@ -18,13 +18,13 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://corsproxy.io/?key=YOUR_API_KEY&url=https://namastedev.com/api/v1/listRestaurants",
+      "https://corsproxy.io/?key=YOUR_API_KEY&url=https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.4499186&lng=80.331858&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
     );
 
     const json = await data.json();
 
     const restaurants =
-      json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
     setListOfRestaurant(restaurants);
     setFilteredRestaurnt(restaurants);
