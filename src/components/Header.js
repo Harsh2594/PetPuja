@@ -3,12 +3,16 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { UserCircle } from "lucide-react";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("Login");
   const onlineStatus = useOnlineStatus();
 
-  console.log("header render");
+  //Selector(Hook)
+  //Suscribing to the store using a selector
+  const cartitem = useSelector((store) => store.cart.items);
+  console.log(cartitem);
 
   useEffect(() => {
     console.log("useEffect called");
@@ -53,7 +57,7 @@ const Header = () => {
 
           {/* Cart */}
           <li className="px-4 py-2 rounded-full text-gray-700 font-medium hover:text-amber-500 hover:bg-orange-50 transition-colors duration-200 cursor-pointer">
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart">Cart({cartitem.length} items)</Link>
           </li>
 
           {/* Grocery */}
