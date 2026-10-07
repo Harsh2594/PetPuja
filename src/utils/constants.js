@@ -1,10 +1,16 @@
 export const LOGO_URL =
   "https://png.pngtree.com/png-vector/20220705/ourmid/pngtree-food-logo-png-image_5687686.png";
 
+export const GOOGLE_STORE =
+  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/m/play_store.png";
+
+export const APP_STORE =
+  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/m/app_store.png";
 export const CDN_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1600,h_640,c_fill/";
 
-export const MENU_API = "https://namastedev.com/api/v1/listRestaurantMenu/";
+export const MENU_API =
+  "https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=26.4499186&lng=80.331858&restaurantId=";
 
 export const CORS_PROXY = "https://corsproxy.io/?key=YOUR_API_KEY&url=";
 

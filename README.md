@@ -38,3 +38,12 @@ find out difference between current vartual DOM with Previous vartual DOM.
 
 -Client Side: "I'm already here; just change what I see."
 -Server Side routing:Give me a different page from the server."
+
+# Redux tool kit
+
+-Install redux tool kit(@reduxjs/toolkit and react-redux)
+-Build own store
+-connect our store to our app
+-Slice(cartSlice)
+-dispatch(action)
+-Selector(to read data)

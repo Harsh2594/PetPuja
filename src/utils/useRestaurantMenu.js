@@ -1,19 +1,27 @@
-//Costom Hook
 import { useEffect, useState } from "react";
 import { CORS_PROXY, MENU_API } from "./constants";
 
 const useRestaurantMenu = (resId) => {
   const [resInfo, setResInfo] = useState(null);
 
-  //fetch data
   useEffect(() => {
     fetchMenu();
-  }, []);
+  }, [resId]);
 
   const fetchMenu = async () => {
-    const data = await fetch(CORS_PROXY + MENU_API + resId);
-    const json = await data.json();
-    setResInfo(json.data);
+    try {
+      const data = await fetch(CORS_PROXY + MENU_API + resId);
+
+      if (!data.ok) {
+        throw new Error(`HTTP Error: ${data.status}`);
+      }
+
+      const json = await data.json();
+
+      setResInfo(json.data ?? json);
+    } catch (error) {
+      console.error("Failed to fetch restaurant menu:", error);
+    }
   };
 
   return resInfo;
