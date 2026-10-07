@@ -6,6 +6,9 @@ import Header from "./components/Header";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
 import RestaurantCard from "./components/RestaurantCard";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Footer from "./components/Footer";
 
 //Chunking
 //Code Splitting
@@ -22,10 +25,13 @@ const Body = lazy(() => import("./components/Body"));
 
 const AppLayout = () => {
   return (
-    <div>
-      <Header />
-      <Outlet />
-    </div>
+    <Provider store={appStore}>
+      <div className="app">
+        <Header />
+        <Outlet />
+        <Footer />
+      </div>
+    </Provider>
   );
 };
 
