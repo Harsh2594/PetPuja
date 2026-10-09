@@ -12,7 +12,7 @@ export const CDN_URL =
 export const MENU_API =
   "https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=26.4499186&lng=80.331858&restaurantId=";
 
-export const CORS_PROXY = "https://corsproxy.io/?key=YOUR_REAL_KEY&url=";
+export const CORS_PROXY = "https://corsproxy.io/?key=a4954935&url=";
 
 export const RES_CARD_API =
   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.4499186&lng=80.331858&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
