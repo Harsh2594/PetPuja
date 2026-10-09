@@ -22,7 +22,7 @@ const Body = () => {
 
   const fetchData = async () => {
     try {
-      const data = await fetch(CORS_PROXY + RES_CARD_API);
+      const data = await fetch(CORS_PROXY + encodeURIComponent(RES_CARD_API));
 
       if (!data.ok) {
         throw new Error(`HTTP error! Status: ${data.status}`);
