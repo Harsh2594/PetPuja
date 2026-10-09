@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { withNonVegLabel } from "./RestaurantCard";
+import { RES_CARD_API } from "../utils/constants";
+import { CORS_PROXY } from "../utils/constants";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurant] = useState(resList);
@@ -17,9 +19,7 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://corsproxy.io/?key=YOUR_API_KEY&url=https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.4499186&lng=80.331858&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
-    );
+    const data = await fetch(CORS_PROXY + RES_CARD_API);
 
     const json = await data.json();
 

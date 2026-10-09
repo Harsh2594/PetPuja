@@ -14,7 +14,8 @@ export const MENU_API =
 
 export const CORS_PROXY = "https://corsproxy.io/?key=YOUR_API_KEY&url=";
 
-export const RES_CARD_API = "https://namastedev.com/api/v1/listRestaurants";
+export const RES_CARD_API =
+  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.4499186&lng=80.331858&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 
 export const EMPTY_CART =
   "https://cdn-icons-png.flaticon.com/512/2762/2762885.png";
