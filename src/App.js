@@ -9,6 +9,7 @@ import RestaurantCard from "./components/RestaurantCard";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Footer from "./components/Footer";
+import Error from "./components/Error";
 
 //Chunking
 //Code Splitting

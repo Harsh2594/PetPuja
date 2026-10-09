@@ -47,3 +47,23 @@ find out difference between current vartual DOM with Previous vartual DOM.
 -Slice(cartSlice)
 -dispatch(action)
 -Selector(to read data)
+
+# Testing
+
+-Unit testing(test component in isolation)
+-Integration testing(testing the integration of component)
+-End to End testing
+-jest(js testing library(react testing library using this behind the sence))
+
+# Setting up Testing in our app
+
+-Install React Testing libraray
+-Install jest
+-Install babel dependencies
+-Configure babel
+-Configure Parcel config file to disable default babel transpilation
+-Jest Configuration npx create-jest
+-Install jsdom
+-Install @babel/preset-react - to make JSX work in test cases
+-Install @babel/preset-react inside my babel config
+-install @testing-library/jest-dom

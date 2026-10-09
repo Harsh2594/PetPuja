@@ -12,7 +12,10 @@ const Header = () => {
   //Selector(Hook)
   //Suscribing to the store using a selector
   const cartitem = useSelector((store) => store.cart.items);
-  console.log(cartitem);
+  const cartItemCount = cartitem.reduce(
+    (total, item) => total + item.quantity,
+    0,
+  );
 
   useEffect(() => {
     console.log("useEffect called");
@@ -57,7 +60,7 @@ const Header = () => {
 
           {/* Cart */}
           <li className="px-4 py-2 rounded-full text-gray-700 font-medium hover:text-amber-500 hover:bg-orange-50 transition-colors duration-200 cursor-pointer">
-            <Link to="/cart">Cart({cartitem.length} items)</Link>
+            <Link to="/cart">Cart({cartItemCount} items)</Link>
           </li>
 
           {/* Grocery */}

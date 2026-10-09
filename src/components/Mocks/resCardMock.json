@@ -1,0 +1,77 @@
+{
+  "id": "361087",
+  "name": "The Good Bowl",
+  "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/12/20/5f45f33f-b4c0-48b5-b8da-7309819958fe_361087.jpg",
+  "locality": "Permat",
+  "areaName": "Harsh Nagar",
+  "costForTwo": "₹400 for two",
+  "cuisines": [
+    "Biryani",
+    "North Indian",
+    "Pastas",
+    "Punjabi",
+    "Desserts",
+    "Beverages"
+  ],
+  "avgRating": 4.5,
+  "parentId": "7918",
+  "avgRatingString": "4.5",
+  "totalRatingsString": "1.8K+",
+  "sla": {
+    "deliveryTime": 37,
+    "lastMileTravel": 4.5,
+    "serviceability": "SERVICEABLE",
+    "slaString": "30-35 mins",
+    "lastMileTravelString": "4.5 km",
+    "iconType": "ICON_TYPE_EMPTY"
+  },
+  "availability": {
+    "nextCloseTime": "2026-10-10 01:00:00",
+    "opened": true
+  },
+  "badges": {
+    "imageBadges": [
+      {
+        "imageId": "brand_cards/Badges%202026/67_Best%20in%20Mughlai2026.png",
+        "description": "Top-rated for Mughlai, based on user votes."
+      }
+    ]
+  },
+  "isOpen": true,
+  "aggregatedDiscountInfoV2": {},
+  "type": "F",
+  "badgesV2": {
+    "entityBadges": {
+      "imageBased": {
+        "badgeObject": [
+          {
+            "attributes": {
+              "description": "Top-rated for Mughlai, based on user votes.",
+              "imageId": "brand_cards/Badges%202026/67_Best%20in%20Mughlai2026.png",
+              "theme": ""
+            }
+          }
+        ]
+      },
+      "textBased": {},
+      "textExtendedBadges": {}
+    }
+  },
+  "differentiatedUi": {
+    "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+    "differentiatedUiMediaDetails": {
+      "lottie": {},
+      "video": {}
+    }
+  },
+  "reviewsSummary": {},
+  "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+  "restaurantOfferPresentationInfo": {},
+  "externalRatings": {
+    "aggregatedRating": {
+      "rating": "--"
+    }
+  },
+  "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
+  "priceComparisonComms": {}
+}

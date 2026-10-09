@@ -48,6 +48,7 @@ const Body = () => {
         <div className="search m-4 p-4 flex items-center">
           <input
             type="text"
+            data-testid="searchInput"
             className="border border-gray-200 rounded-xl shadow-md
                px-4 py-2 outline-none
                hover:border-gray-400
@@ -83,11 +84,10 @@ const Body = () => {
             className="text-gray-500 px-4 py-1.5 bg-amber-500 m-4 hover:text-gray-900 focus:text-gray-900 
              text-lg rounded-lg"
             onClick={() => {
-              console.log(listOfRestaurants);
               const filteredList = listOfRestaurants.filter(
-                (res) => res.info.avgRating > 4,
+                (res) => res.info.avgRating > 4.3,
               );
-              setListOfRestaurant(filteredList);
+              setFilteredRestaurnt(filteredList);
             }}
           >
             Top Rated Restaurant

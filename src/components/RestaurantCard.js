@@ -20,6 +20,7 @@ const RestaurantCard = (props) => {
 
   return (
     <div
+      data-testid="resCard"
       className="m-4 w-[350px] shrink-0 rounded-2xl bg-white
                  overflow-hidden cursor-pointer
                  transition-all duration-300
