@@ -14,10 +14,32 @@ const cartSlice = createSlice({
 
       //REDUX Toolkit(Use immer library to implement this uses older logic)
       //We have to mutate the state here
-      state.items.push(action.payload);
+      const existingItem = state.items.find(
+        (item) => item.card.info.id === action.payload.card.info.id,
+      );
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        state.items.push({
+          ...action.payload,
+          quantity: 1,
+        });
+      }
     },
-    removeItem: (state) => {
-      state.items.pop();
+    removeItem: (state, action) => {
+      const existingItem = state.items.find(
+        (item) => item.card.info.id === action.payload,
+      );
+
+      if (existingItem) {
+        existingItem.quantity -= 1;
+
+        if (existingItem.quantity === 0) {
+          state.items = state.items.filter(
+            (item) => item.card.info.id !== action.payload,
+          );
+        }
+      }
     },
     clearCart: (state) => {
       state.items.length = 0;
