@@ -70,22 +70,22 @@ const Header = () => {
 
           {/* About Us */}
           <li className="px-4 py-2 rounded-full text-gray-700 font-medium hover:text-amber-500 hover:bg-orange-50 transition-colors duration-200 cursor-pointer">
-            <Link to="/about">About Us</Link>
+            <Link to="/home/about">About Us</Link>
           </li>
 
           {/* Contact Us */}
           <li className="px-4 py-2 rounded-full text-gray-700 font-medium hover:text-amber-500 hover:bg-orange-50 transition-colors duration-200 cursor-pointer">
-            <Link to="/contact">Contact Us</Link>
+            <Link to="/home/contact">Contact Us</Link>
           </li>
 
           {/* Cart */}
           <li className="px-4 py-2 rounded-full text-gray-700 font-medium hover:text-amber-500 hover:bg-orange-50 transition-colors duration-200 cursor-pointer">
-            <Link to="/cart">Cart({cartItemCount} items)</Link>
+            <Link to="/home/cart">Cart({cartItemCount} items)</Link>
           </li>
 
           {/* Grocery */}
           <li className="px-4 py-2 rounded-full text-gray-700 font-medium hover:text-amber-500 hover:bg-orange-50 transition-colors duration-200 cursor-pointer">
-            <Link to="/grocery">Grocery</Link>
+            <Link to="/home/grocery">Grocery</Link>
           </li>
 
           {/* User */}
