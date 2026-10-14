@@ -10,6 +10,7 @@ import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Footer from "./components/Footer";
 import Error from "./components/Error";
+import Login from "./components/Login";
 
 //Chunking
 //Code Splitting
@@ -39,12 +40,16 @@ const AppLayout = () => {
 const appRouter = createBrowserRouter([
   {
     path: "/",
+    element: <Login />,
+  },
+  {
+    path: "/home",
     element: <AppLayout />,
     children: [
-      { path: "/", element: <Body /> },
+      { path: "/home", element: <Body /> },
 
       {
-        path: "/about",
+        path: "/home/about",
         element: (
           <Suspense fallback={<h1>Loading...</h1>}>
             <About />
@@ -53,7 +58,7 @@ const appRouter = createBrowserRouter([
       },
 
       {
-        path: "/contact",
+        path: "/home/contact",
         element: (
           <Suspense fallback={<h1>Loading...</h1>}>
             <Contact />
@@ -71,7 +76,7 @@ const appRouter = createBrowserRouter([
       },
 
       {
-        path: "/cart",
+        path: "/home/cart",
         element: (
           <Suspense fallback={<h1>Loading...</h1>}>
             <Cart />
@@ -79,7 +84,7 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
-        path: "/grocery",
+        path: "/home/grocery",
         element: (
           <Suspense fallback={<h1>Loading...</h1>}>
             <Grocery />
@@ -87,7 +92,7 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
-        path: "/restaurants/:resId",
+        path: "/home/restaurants/:resId",
         element: <RestaurantMenu />,
         errorElement: <Error />,
       },
