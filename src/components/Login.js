@@ -7,20 +7,34 @@ import {
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { LOGO_URL } from "../utils/constants";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 
 const Login = () => {
+  const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+
   const googleProvider = new GoogleAuthProvider();
+
   const handleGoogleLogin = async () => {
     try {
       const result = await signInWithPopup(auth, googleProvider);
+      const user = result.user;
+      dispatch(
+        addUser({
+          uid: user.uid,
+          name: user.displayName || "User",
+          email: user.email,
+          photoURL: user.photoURL,
+        }),
+      );
 
       console.log("Google login successful:", result.user);
 
-      navigate("/");
+      navigate("/home");
     } catch (error) {
       console.log("Google login error:", error);
       setError("Google login failed");

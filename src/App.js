@@ -27,13 +27,11 @@ const Body = lazy(() => import("./components/Body"));
 
 const AppLayout = () => {
   return (
-    <Provider store={appStore}>
-      <div className="app">
-        <Header />
-        <Outlet />
-        <Footer />
-      </div>
-    </Provider>
+    <div className="app">
+      <Header />
+      <Outlet />
+      <Footer />
+    </div>
   );
 };
 
@@ -103,4 +101,8 @@ const appRouter = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<RouterProvider router={appRouter} />);
+root.render(
+  <Provider store={appStore}>
+    <RouterProvider router={appRouter} />
+  </Provider>,
+);

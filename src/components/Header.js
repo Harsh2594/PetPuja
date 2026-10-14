@@ -4,14 +4,17 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { UserCircle } from "lucide-react";
 import { useSelector } from "react-redux";
+import { removeUser } from "../utils/userSlice";
+import { useDispatch } from "react-redux";
 
 const Header = () => {
-  const [btnNameReact, setBtnNameReact] = useState("Login");
   const onlineStatus = useOnlineStatus();
+  const dispatch = useDispatch();
 
   //Selector(Hook)
   //Suscribing to the store using a selector
   const cartitem = useSelector((store) => store.cart.items);
+  const user = useSelector((store) => store.user.user);
   const cartItemCount = cartitem.reduce(
     (total, item) => total + item.quantity,
     0,
@@ -20,6 +23,9 @@ const Header = () => {
   useEffect(() => {
     console.log("useEffect called");
   }, []);
+  const handleLogout = () => {
+    dispatch(removeUser());
+  };
 
   return (
     <div className="flex justify-between items-center px-10 py-3 bg-white shadow-md border-b border-gray-100">
@@ -68,19 +74,27 @@ const Header = () => {
             <Link to="/grocery">Grocery</Link>
           </li>
 
-          {/* Login / Logout */}
-          <li>
-            <button
-              className="ml-2 px-6 py-2 rounded-full bg-amber-500 text-white font-semibold shadow-sm hover:bg-orange-600 hover:shadow-md active:scale-95 transition-all duration-200"
-              onClick={() => {
-                btnNameReact === "Login"
-                  ? setBtnNameReact("Logout")
-                  : setBtnNameReact("Login");
-              }}
-            >
-              {btnNameReact}
-            </button>
+          {/* User */}
+          <li className="flex items-center ml-2">
+            {user ? (
+              <div className="flex items-center gap-2">
+                <img
+                  src={user.photoURL}
+                  alt={user.displayName}
+                  className="w-10 h-10 rounded-full object-cover"
+                />
+
+                <span className="font-semibold text-gray-700">{user.name}</span>
+              </div>
+            ) : (
+              <div className="flex items-center gap-2">
+                <UserCircle size={36} className="text-gray-600" />
+
+                <span className="font-semibold text-gray-700">User</span>
+              </div>
+            )}
           </li>
+          <button onClick={handleLogout}>Logout</button>
         </ul>
       </div>
     </div>
